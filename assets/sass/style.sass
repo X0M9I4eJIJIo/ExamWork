@@ -1,0 +1,113 @@
+@import fonts, var
+  
+*
+  margin: 0
+  padding: 0
+  text-decoration: none
+  list-style: none
+  color: inherit
+  box-sizing: border-box
+  @extend %Proxima-400
+
+.container
+  max-width: 84.6875rem
+  margin: 0 auto
+
+.main
+  padding: 35px
+  &__title
+    font-weight: 700
+    font-size: 50px
+    color: $dark
+    text-align: center
+    margin: 45px 0 100px 0
+  &__cards
+    margin-bottom: 130px
+    .help-cards
+      display: grid
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr))
+      grid-gap: 100px
+      .help-card
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-items: center
+        text-align: center
+        width: 100%
+        &__img
+          max-width: 115px
+          width: 100%
+        .card-content
+          &__title
+            margin: 51px 0 25px 0
+          &__desc
+            @extend %Proxima-400
+            margin-bottom: 35px
+            line-height: 28px
+            font-size: 16px
+          &__btn
+            @extend %button
+.section
+  &__block
+    display: grid
+    justify-content: center
+    grid-template-columns: repeat(auto-fill, minmax(615px, 1fr))
+    &-img
+      max-width: 615px
+      width: 100%
+    .block-content
+      padding: 15px
+      &__title
+        font-weight: 700
+        font-size: 50px
+      &__desc
+        font-size: 16px
+        margin: 24px 0 48px 0
+      &__btn
+        @extend %button
+
+@media screen and (max-width: 1230px)
+  .section
+    &__block
+      justify-items: center
+      &-img
+        padding: 15px
+
+@media screen and (max-width: 620px)
+  .section
+    &__block
+      grid-template-columns: 1fr
+      &-img
+        img
+        width: 100%
+        height: auto
+      .block-content
+        padding: 15px
+        &__title
+          font-weight: 700
+          font-size: 35px
+        &__desc
+          font-size: 16px
+          margin: 24px 0 48px 0
+        &__btn
+          @extend %button
+
+@media screen and (max-width: 420px)
+  .main
+    padding: 20px
+    &__title
+      font-size: 35px
+    &__cards
+      .help-cards
+        grid-template-columns: 1fr
+  .section
+    &__block
+      .block-content
+        padding: 8px
+        &__title
+          font-weight: 700
+          font-size: 30px
+        &__desc
+          font-size: 16px
+          margin: 16px 0 38px 0
+        &__btn
